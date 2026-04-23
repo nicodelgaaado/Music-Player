@@ -87,13 +87,16 @@
           </button>
           <button
             type="button"
-            class="control primary"
+            class="control primary icon-toggle"
             (click)="togglePlayback()"
             [disabled]="!tracks.length"
+            [attr.aria-label]="isPlaying ? 'Pause' : 'Play'"
           >
             <ng-container *ngIf="isLoadingTrack">Loading.</ng-container>
             <ng-container *ngIf="!isLoadingTrack">
-              {{ isPlaying ? 'Pause' : 'Play' }}
+              <span class="transport-icon" aria-hidden="true">
+                {{ isPlaying ? '❚❚' : '▶' }}
+              </span>
             </ng-container>
           </button>
           <button

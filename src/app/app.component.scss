@@ -327,6 +327,19 @@
       background: #1ed760;
     }
   }
+
+  &.icon-toggle {
+    min-width: 64px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0;
+    line-height: 1;
+  }
+}
+
+.transport-icon {
+  font-size: 1.1rem;
 }
 
 .volume {
