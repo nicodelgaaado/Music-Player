@@ -491,7 +491,9 @@ export class AppComponent implements OnDestroy {
       return undefined;
     }
 
-    const blob = new Blob([imageBytes], { type: mimeType || 'image/jpeg' });
+    const imageBuffer = new ArrayBuffer(imageBytes.byteLength);
+    new Uint8Array(imageBuffer).set(imageBytes);
+    const blob = new Blob([imageBuffer], { type: mimeType || 'image/jpeg' });
     return URL.createObjectURL(blob);
   }
 
